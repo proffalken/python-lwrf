@@ -35,8 +35,21 @@ class Light():
                                      socket.SOCK_DGRAM) # UDP
         sock.sendto(self.message.encode(), ("10.224.231.124", 9760))
 
-    def change_state(self, state):
+    def _set_brightness(self, brightness):
+        self.message = ",!%s%sFdP%s" % (
+                self.room_id,
+                self.device_id,
+                brightness
+                )
+        #self.hub.send_message(self.message.encode())
+        sock = socket.socket(socket.AF_INET, # Internet
+                                     socket.SOCK_DGRAM) # UDP
+        sock.sendto(self.message.encode(), ("10.224.231.124", 9760))
+
+    def change_state(self, state = "OFF", brightness = 0):
         if state == "OFF":
             self._switch_off()
         elif state == "ON":
             self._switch_on()
+        elif state == "DIM":
+            self._set_brightness(brightness)
