@@ -12,8 +12,8 @@ install_reqs = parse_requirements(
 # e.g. ['django==1.5.1', 'mezzanine==1.4.6']
 reqs = [str(ir.req) for ir in install_reqs]
 
-pkg_version = '0.0.2'
-pkg_url="https://github.com/proffalken/python-lwrf/archive/%s.tar.gz" % (
+pkg_version = '0.0.1'
+pkg_url="https://github.com/proffalken/python-lwrf/archive/v%s.tar.gz" % (
         pkg_version
         )
 
