@@ -21,3 +21,11 @@ class TestV1Lighting(unittest.TestCase):
         set_state = self.light.change_state(state='DIM',
                                             brightness=16)
         self.assertEqual(set_state['return_code'], 0)
+
+    def test_light_can_be_switched_on(self):
+        set_state = self.light.change_state(state='ON')
+        self.assertEqual(set_state['return_code'], 0)
+
+    def test_light_can_be_switched_off(self):
+        set_state = self.light.change_state(state='OFF')
+        self.assertEqual(set_state['return_code'], 0)

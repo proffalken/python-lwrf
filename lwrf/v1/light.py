@@ -58,8 +58,12 @@ class Light():
         _return_code = 128
         if state == "OFF":
             self._switch_off()
+            _msg = "OFF Instruction Sent"
+            _return_code = 0
         elif state == "ON":
             self._switch_on()
+            _msg = "ON Instruction Sent"
+            _return_code = 0
         elif state == "DIM":
             if brightness > 32:
                 _msg = """
