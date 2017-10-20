@@ -12,7 +12,7 @@ install_reqs = parse_requirements(
 # e.g. ['django==1.5.1', 'mezzanine==1.4.6']
 reqs = [str(ir.req) for ir in install_reqs]
 
-pkg_version = '0.0.4'
+pkg_version = '0.0.5'
 pkg_url = "https://github.com/proffalken/python-lwrf/archive/v%s.tar.gz" % (
         pkg_version
         )
@@ -24,7 +24,7 @@ setup(
     url='https://github.com/proffalken/python-lwrf',
     download_url=pkg_url,
     author_email='matt@doics.co',
-    packages=['lwrf'],
+    packages=['lwrf', 'lwrf.v1'],
     license=['LICENSE.txt'],
     description=['A Python3 Library to control LightwaveRF Devices'],
     install_requires=reqs,
