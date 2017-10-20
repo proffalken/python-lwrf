@@ -13,7 +13,7 @@ install_reqs = parse_requirements(
 reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
-    name='Python Lightwave RF',
+    name='python-lwrf',
     version='0.0.1',
     author='Matthew Macdonald-Wallace',
     url='https://github.com/proffalken/python-lwrf',
