@@ -15,6 +15,10 @@ class Hub():
         self.port = port
         self.target = (self.host, self.port)
 
+    def link_hub(self):
+        link_msg = '!F*p'
+        self.send_message(link_msg.encode())
+
     def send_message(self, message):
         self.sock.sendto(
             message.encode(),
