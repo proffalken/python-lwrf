@@ -16,6 +16,8 @@ setup(
     name='Python Lightwave RF',
     version='0.0.1',
     author='Matthew Macdonald-Wallace',
+    url='https://github.com/proffalken/python-lwrf',
+    download_url='https://github.com/proffalken/python-lwrf/archive/0.0.1.tar.gz',
     author_email='matt@doics.co',
     packages=['lwrf'],
     license=['LICENSE.txt'],
