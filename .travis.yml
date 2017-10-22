@@ -1,0 +1,20 @@
+language: python
+python:
+- '2.7'
+- '3.6'
+install:
+- pip install -r requirements.txt
+script:
+- python setup.py test
+before_deploy:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://$TAGPERM@github.com/proffalken/python-lwrf --tags
+  - ls -R
+deploy:
+  provider: pypi
+  user: proffalken1981
+  password:
+    secure: HRi58XVb5lzmWmfWxCThbNdU3676O58rUhATrUNFPT1f/JwhdwRHIm5IjqtjMCTfs6ZnArtTDEjmAuXtetA0xgL1+NYxRxPOckdHR0q7xYIwUFeDaNoPX1HeBPeIATI/0pl4nWE6Z7e+zBRnTdelKo1IZrv6Wgwyl9ZBc5/QBbALYt7993ClaNusUftZY0gZY1eq1g8liRNhlMbQN5End2HaH4aoumi0js6KpIujS7MsxMjh9Qr8Kk/pfnn4GtzgaKfBkXYChj5WDkuEJ6DKg4TtY7rohBTaKotZ6Q5KBjoTzDoiqm/ItgyFUXflH9YatOPTQEKgi4bmtBWO/XfOzJ2/7fMMTUTXoO8ppfxWIRopDUFcUxIM/yRBH8bv4awFNav1sXi6Ldt9SQ+Yh7k9Fkcv04enUQBk4t1rcFJ5yhZwmHcjxD8hM/FwzPeRslP1GL+9a8+ORGZ5FblX7/lxHrTjEqVWb+CT9WQqMnp6VuqabfTjKVtHbB1MzgRexiXflESFejqe9ZG3VI6rTN/lm+lsgWpvtfFgZV3ekCiIxvjhtQvcd9+zDn+59wm6jZDo4T2t4qS/sUv9fQQ17mdJbcdyUbORNen0PK+n3lCIk34xDZbqc/OhRg8Gm/DF3sR3gspQzgSARdtiWJsLzyS2PfQbaAJb07v64K3Be4dGJfQ=

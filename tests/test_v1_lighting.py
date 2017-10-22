@@ -1,13 +1,16 @@
 import unittest
 from lwrf.v1.light import Light
+from lwrf.v1.hub import Hub
 
 
 class TestV1Lighting(unittest.TestCase):
 
     def setUp(self):
+        self.hub = Hub("127.0.0.1", 9760)
         self.room = 1
         self.device = 1
         self.light = Light(
+            hub=self.hub,
             room_id=self.room,
             device_id=self.device
         )
