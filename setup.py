@@ -14,8 +14,8 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 pkg_version = '0.0.5'
 pkg_url = "https://github.com/proffalken/python-lwrf/archive/v%s.tar.gz" % (
-        pkg_version
-        )
+    pkg_version
+)
 
 setup(
     name='python-lwrf',
