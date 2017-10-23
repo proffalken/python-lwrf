@@ -2,6 +2,11 @@
 
 Control Lightwave RF Devices using Python
 
+## Current Status:
+
+[![Build
+Status](https://travis-ci.org/proffalken/python-lwrf.svg?branch=master)](https://travis-ci.org/proffalken/python-lwrf)
+
 ## Versions of LWRF Kit
 
 This libary currently only supports Version 1 Lightwave Devices,
